@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VoltEdge EV Components Pvt. Ltd. | Leading EV Battery Manufacturer India</title>
+  <meta name="description" content="VoltEdge EV Components – India's premier manufacturer of Lithium-Ion Battery Packs, BMS, EV Chargers & Components. Powering the electric revolution."/>
+  <meta property="og:title" content="VoltEdge EV Components Pvt. Ltd."/>
+  <meta property="og:description" content="India's leading EV battery and component manufacturer. Premium lithium-ion batteries, smart BMS, and fast chargers."/>
+  <meta property="og:type" content="website"/>
+  <meta name="theme-color" content="#00d4ff"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"VoltEdge EV Components Pvt. Ltd.","url":"https://voltedgeev.in","address":{"@type":"PostalAddress","streetAddress":"Plot 47, Phase II, GIDC Industrial Estate","addressLocality":"Gandhinagar","addressRegion":"Gujarat","postalCode":"382024","addressCountry":"IN"}}</script>
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-logo">⚡ VOLTEDGE</div>
+  <div class="loader-bar"><div class="loader-bar-inner"></div></div>
+  <div style="margin-top:1rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--text3);letter-spacing:2px;">INITIALIZING SYSTEMS...</div>
+</div>
+
+<!-- Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- Nav Overlay -->
+<div id="nav-overlay"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <div class="brand-icon">⚡</div>
+      <span><span class="brand-volt">Volt</span><span class="brand-edge">Edge</span></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-line"></span>
+      <span class="toggler-line"></span>
+      <span class="toggler-line"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="battery-solutions.html">Batteries</a></li>
+        <li class="nav-item"><a class="nav-link" href="components.html">Components</a></li>
+        <li class="nav-item"><a class="nav-link" href="research.html">R&amp;D</a></li>
+        <li class="nav-item"><a class="nav-link" href="industries.html">Industries</a></li>
+        <li class="nav-item"><a class="nav-link" href="sustainability.html">Sustainability</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-volt"><span>Get Quote</span></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <div class="hero-bg"></div>
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-grid-overlay"></div>
+  <div class="container">
+    <div class="row align-items-center g-5" style="padding-top:5rem;">
+      <div class="col-lg-6">
+        <div class="hero-content">
+          <div class="hero-eyebrow">India's Premier EV Component Manufacturer</div>
+          <h1 class="hero-title">
+            Powering The<br/>
+            <em>Electric Future</em><br/>
+            of India
+          </h1>
+          <p class="hero-desc">Advanced lithium-ion battery systems, smart BMS, ultrafast EV chargers, and precision components engineered for the next generation of electric vehicles.</p>
+          <div class="hero-actions">
+            <a href="battery-solutions.html" class="btn btn-volt"><span>⚡ Explore Products</span></a>
+            <a href="about.html" class="btn-outline-volt">Our Story →</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num"><span data-target="500" data-suffix="+">0+</span></div>
+              <div class="hero-stat-label">Battery Packs Delivered</div>
+            </div>
+            <div>
+              <div class="hero-stat-num"><span data-target="12" data-suffix="">0</span></div>
+              <div class="hero-stat-label">Years of Innovation</div>
+            </div>
+            <div>
+              <div class="hero-stat-num"><span data-target="98" data-suffix="%">0%</span></div>
+              <div class="hero-stat-label">Client Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-visual">
+          <div class="hero-orb">
+            <div class="hero-orb-center">🔋</div>
+            <div class="orbit-dot"></div>
+            <div class="orbit-dot"></div>
+            <div class="orbit-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="stats-section py-section">
+  <div class="container">
+    <div class="row g-0 text-center">
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal">
+          <div class="stat-number"><span data-target="850" data-suffix="+">0+</span></div>
+          <div class="stat-label">Battery Packs Shipped</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal">
+          <div class="stat-number"><span data-target="150" data-suffix="+">0+</span></div>
+          <div class="stat-label">OEM Partners</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal">
+          <div class="stat-number"><span data-target="18" data-suffix="">0</span></div>
+          <div class="stat-label">States Covered</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal">
+          <div class="stat-number"><span data-target="99.2" data-suffix="%">0%</span></div>
+          <div class="stat-label">Uptime Reliability</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PRODUCTS SECTION -->
+<section class="py-section">
+  <div class="container">
+    <div class="row mb-section">
+      <div class="col-lg-6">
+        <div class="section-tag">Our Solutions</div>
+        <h2 class="section-title">Complete <span class="gradient-text">EV Power</span> Ecosystem</h2>
+      </div>
+      <div class="col-lg-6 d-flex align-items-end">
+        <p class="section-subtitle">From advanced battery cells to intelligent management systems — every component engineered for peak EV performance.</p>
+      </div>
+    </div>
+    <div class="row g-4 stagger-children">
+      <div class="col-md-6 col-xl-4">
+        <div class="glass-card p-4 h-100">
+          <div class="product-icon-box">🔋</div>
+          <div class="product-title">Lithium-Ion Battery Packs</div>
+          <div class="product-desc">High-energy-density NMC/LFP battery modules engineered for 2W, 3W, 4W, and heavy EVs with superior thermal management.</div>
+          <div class="product-specs">
+            <div class="product-spec"><span class="spec-key">Capacity Range</span><span class="spec-val">2.5 – 150 kWh</span></div>
+            <div class="product-spec"><span class="spec-key">Cell Chemistry</span><span class="spec-val">NMC / LFP</span></div>
+            <div class="product-spec"><span class="spec-key">Cycle Life</span><span class="spec-val">>3000 cycles</span></div>
+          </div>
+          <a href="battery-solutions.html" class="btn-outline-volt d-inline-block mt-3" style="font-size:0.82rem;padding:0.5rem 1.2rem;">Learn More →</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="glass-card p-4 h-100">
+          <div class="product-icon-box">⚡</div>
+          <div class="product-title">Smart EV Chargers</div>
+          <div class="product-desc">Level 1, Level 2, and DC fast chargers with integrated IoT connectivity, dynamic load balancing, and remote diagnostics.</div>
+          <div class="product-specs">
+            <div class="product-spec"><span class="spec-key">Output Power</span><span class="spec-val">3.3 – 120 kW</span></div>
+            <div class="product-spec"><span class="spec-key">Protocol</span><span class="spec-val">CCS2 / CHAdeMO</span></div>
+            <div class="product-spec"><span class="spec-key">Efficiency</span><span class="spec-val">>96%</span></div>
+          </div>
+          <a href="components.html" class="btn-outline-volt d-inline-block mt-3" style="font-size:0.82rem;padding:0.5rem 1.2rem;">Learn More →</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="glass-card p-4 h-100">
+          <div class="product-icon-box">🧠</div>
+          <div class="product-title">Battery Management Systems</div>
+          <div class="product-desc">AI-powered BMS with real-time cell balancing, SOC/SOH estimation, thermal runaway prevention, and CAN/BLE connectivity.</div>
+          <div class="product-specs">
+            <div class="product-spec"><span class="spec-key">Cell Count</span><span class="spec-val">Up to 256S</span></div>
+            <div class="product-spec"><span class="spec-key">Accuracy</span><span class="spec-val">±1% SOC</span></div>
+            <div class="product-spec"><span class="spec-key">Interface</span><span class="spec-val">CAN / BLE / RS485</span></div>
+          </div>
+          <a href="battery-solutions.html" class="btn-outline-volt d-inline-block mt-3" style="font-size:0.82rem;padding:0.5rem 1.2rem;">Learn More →</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="glass-card p-4 h-100">
+          <div class="product-icon-box">🔌</div>
+          <div class="product-title">EV Motor Controllers</div>
+          <div class="product-desc">FOC-based BLDC and PMSM motor controllers with regenerative braking, variable speed drive, and vehicle control unit integration.</div>
+          <div class="product-specs">
+            <div class="product-spec"><span class="spec-key">Peak Power</span><span class="spec-val">Up to 250 kW</span></div>
+            <div class="product-spec"><span class="spec-key">Voltage Range</span><span class="spec-val">48V – 800V</span></div>
+            <div class="product-spec"><span class="spec-key">IP Rating</span><span class="spec-val">IP67</span></div>
+          </div>
+          <a href="components.html" class="btn-outline-volt d-inline-block mt-3" style="font-size:0.82rem;padding:0.5rem 1.2rem;">Learn More →</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="glass-card p-4 h-100">
+          <div class="product-icon-box">☀️</div>
+          <div class="product-title">Energy Storage Systems</div>
+          <div class="product-desc">Grid-scale and commercial BESS solutions for solar integration, peak shaving, and off-grid power supply with V2G capability.</div>
+          <div class="product-specs">
+            <div class="product-spec"><span class="spec-key">Storage Range</span><span class="spec-val">10 – 5000 kWh</span></div>
+            <div class="product-spec"><span class="spec-key">Round-trip Eff.</span><span class="spec-val">>93%</span></div>
+            <div class="product-spec"><span class="spec-key">V2G Support</span><span class="spec-val">Yes</span></div>
+          </div>
+          <a href="sustainability.html" class="btn-outline-volt d-inline-block mt-3" style="font-size:0.82rem;padding:0.5rem 1.2rem;">Learn More →</a>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="glass-card p-4 h-100">
+          <div class="product-icon-box">🛞</div>
+          <div class="product-title">EV Drive Train Components</div>
+          <div class="product-desc">Precision-engineered wiring harnesses, thermal management systems, HV connectors, and vehicle control units for complete EV integration.</div>
+          <div class="product-specs">
+            <div class="product-spec"><span class="spec-key">Harness Rating</span><span class="spec-val">Up to 1000V</span></div>
+            <div class="product-spec"><span class="spec-key">Temp Range</span><span class="spec-val">-40°C to +125°C</span></div>
+            <div class="product-spec"><span class="spec-key">Compliance</span><span class="spec-val">AIS 038</span></div>
+          </div>
+          <a href="components.html" class="btn-outline-volt d-inline-block mt-3" style="font-size:0.82rem;padding:0.5rem 1.2rem;">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MANUFACTURING PROCESS -->
+<section class="py-section bg-dark-surface">
+  <div class="container">
+    <div class="row mb-section">
+      <div class="col-lg-8">
+        <div class="section-tag">Manufacturing Excellence</div>
+        <h2 class="section-title">Precision <span class="gradient-text">Engineering</span> Process</h2>
+        <p class="section-subtitle">Our ISO 9001:2015 certified manufacturing facility follows rigorous quality processes from raw material to delivery.</p>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-4">
+        <div class="process-step reveal">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h5>Material Sourcing & QC</h5>
+            <p>Premium-grade lithium cells sourced from certified global suppliers with incoming quality control and traceability.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="process-step reveal">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h5>Cell Grading & Matching</h5>
+            <p>Automated cell sorting for capacity, IR, and voltage matching using precision testing equipment for optimal pack performance.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="process-step reveal">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h5>Pack Assembly</h5>
+            <p>Robotic laser welding, busbar connection, and structural enclosure assembly in a cleanroom environment.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="process-step reveal">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h5>BMS Integration & Flashing</h5>
+            <p>Custom BMS firmware calibration, CAN communication setup, and safety threshold configuration for each application.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="process-step reveal">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <h5>Formation Cycling & Testing</h5>
+            <p>Multi-cycle formation, capacity verification, impedance spectroscopy, and thermal stress testing per AIS-156 standards.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="process-step reveal">
+          <div class="step-number">06</div>
+          <div class="step-content">
+            <h5>Dispatch & Support</h5>
+            <p>Final IP-rated enclosure, documentation package, and real-time tracking with lifetime technical support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- INDUSTRIES -->
+<section class="py-section">
+  <div class="container">
+    <div class="text-center mb-section">
+      <div class="section-tag">Industries We Serve</div>
+      <h2 class="section-title">Powering Every <span class="gradient-text">EV Segment</span></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="industry-card reveal">
+          <div class="industry-icon">🛵</div>
+          <div class="industry-title">E-Scooters</div>
+          <p style="font-size:0.8rem;color:var(--text3);">2W EV OEMs</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="industry-card reveal">
+          <div class="industry-icon">🚗</div>
+          <div class="industry-title">Electric Cars</div>
+          <p style="font-size:0.8rem;color:var(--text3);">Passenger EVs</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="industry-card reveal">
+          <div class="industry-icon">🚌</div>
+          <div class="industry-title">E-Buses</div>
+          <p style="font-size:0.8rem;color:var(--text3);">Public Transit</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="industry-card reveal">
+          <div class="industry-icon">🚚</div>
+          <div class="industry-title">EV Trucks</div>
+          <p style="font-size:0.8rem;color:var(--text3);">Last Mile Logistics</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="industry-card reveal">
+          <div class="industry-icon">🏭</div>
+          <div class="industry-title">Industrial</div>
+          <p style="font-size:0.8rem;color:var(--text3);">AGVs & Forklifts</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="industry-card reveal">
+          <div class="industry-icon">☀️</div>
+          <div class="industry-title">Solar Storage</div>
+          <p style="font-size:0.8rem;color:var(--text3);">BESS Solutions</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TESTIMONIALS -->
+<section class="py-section bg-dark-surface">
+  <div class="container">
+    <div class="text-center mb-section">
+      <div class="section-tag">Client Testimonials</div>
+      <h2 class="section-title">Trusted By <span class="gradient-text">Industry Leaders</span></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"VoltEdge's BMS cut our warranty claims by 40%. Their engineers understood our 3-wheeler application deeply and delivered a battery pack that simply works — reliably, every time."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">RS</div>
+            <div>
+              <div class="author-name">Rajiv Sharma</div>
+              <div class="author-role">CTO, EcoRide Motors Pvt. Ltd., Pune</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"We switched to VoltEdge's 60V LFP packs for our e-rickshaw fleet and range improved by 28%. The thermal performance in Gujarat summers is exceptional. Highly recommend."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">PA</div>
+            <div>
+              <div class="author-name">Priya Agarwal</div>
+              <div class="author-role">Founder, GreenMile Fleet Solutions, Ahmedabad</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"VoltEdge delivered 200 BESS units for our solar micro-grid project on time and within budget. Their post-installation support team is outstanding. A true technology partner."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MK</div>
+            <div>
+              <div class="author-name">Manish Kothari</div>
+              <div class="author-role">Director, SunPower Energy Systems, Jaipur</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- BLOG PREVIEW -->
+<section class="py-section">
+  <div class="container">
+    <div class="row align-items-center mb-section">
+      <div class="col-lg-8">
+        <div class="section-tag">Insights & News</div>
+        <h2 class="section-title">Latest From Our <span class="gradient-text">Lab</span></h2>
+      </div>
+      <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+        <a href="blog.html" class="btn-outline-volt">View All Articles →</a>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="blog-card reveal">
+          <div class="blog-img">🔋</div>
+          <div class="p-4">
+            <div class="blog-meta"><span class="blog-tag">Battery Tech</span><span class="blog-date">May 2, 2025</span></div>
+            <div class="blog-title">The Future of EV Batteries in India: A 2030 Roadmap</div>
+            <div class="blog-excerpt">India's EV battery market is projected to reach ₹1.2 lakh crore by 2030. Here's what technologies will dominate and who's leading the charge.</div>
+            <div class="blog-author">
+              <div class="author-mini-avatar">AK</div>
+              <span class="author-mini-name">Dr. Arvind Kumar · 8 min read</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="blog-card reveal">
+          <div class="blog-img">🔬</div>
+          <div class="p-4">
+            <div class="blog-meta"><span class="blog-tag">Innovation</span><span class="blog-date">Apr 18, 2025</span></div>
+            <div class="blog-title">Lithium-Ion vs Solid-State Batteries: What EV Makers Need to Know</div>
+            <div class="blog-excerpt">Solid-state batteries promise 2x energy density, but are they production-ready? A deep-dive technical comparison for automotive engineers.</div>
+            <div class="blog-author">
+              <div class="author-mini-avatar">SP</div>
+              <span class="author-mini-name">Sneha Patel · 12 min read</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="blog-card reveal">
+          <div class="blog-img">🤖</div>
+          <div class="p-4">
+            <div class="blog-meta"><span class="blog-tag">AI & Manufacturing</span><span class="blog-date">Apr 5, 2025</span></div>
+            <div class="blog-title">How AI is Transforming EV Battery Manufacturing in 2025</div>
+            <div class="blog-excerpt">Machine learning for predictive quality control, AI-driven formation protocols, and digital twin technology are reshaping battery production lines.</div>
+            <div class="blog-author">
+              <div class="author-mini-avatar">RV</div>
+              <span class="author-mini-name">Rohit Verma · 10 min read</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CERTIFICATIONS -->
+<section class="py-section bg-dark-surface">
+  <div class="container">
+    <div class="text-center mb-section">
+      <div class="section-tag">Quality Assurance</div>
+      <h2 class="section-title">Certified for <span class="gradient-text">Excellence</span></h2>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-4">
+        <div class="cert-badge reveal">
+          <div class="cert-icon">🏆</div>
+          <div><div class="cert-name">ISO 9001:2015</div><div class="cert-issued">Quality Management System</div></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="cert-badge reveal">
+          <div class="cert-icon">⚡</div>
+          <div><div class="cert-name">AIS 038 Rev. 2</div><div class="cert-issued">Battery Safety Standard India</div></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="cert-badge reveal">
+          <div class="cert-icon">🛡️</div>
+          <div><div class="cert-name">ISO 14001:2015</div><div class="cert-issued">Environmental Management</div></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="cert-badge reveal">
+          <div class="cert-icon">🔬</div>
+          <div><div class="cert-name">IEC 62133-2</div><div class="cert-issued">Li-Ion Battery Safety</div></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="cert-badge reveal">
+          <div class="cert-icon">🌿</div>
+          <div><div class="cert-name">CE Marking</div><div class="cert-issued">European Safety Compliance</div></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="cert-badge reveal">
+          <div class="cert-icon">🇮🇳</div>
+          <div><div class="cert-name">FAME II Approved</div><div class="cert-issued">Govt. of India EV Policy</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FAQ -->
+<section class="py-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 mb-5 mb-lg-0">
+        <div class="section-tag">FAQ</div>
+        <h2 class="section-title">Common <span class="gradient-text">Questions</span></h2>
+        <p class="section-subtitle">Everything you need to know about our EV components and services.</p>
+        <a href="contact.html" class="btn btn-volt mt-4"><span>Ask Us Anything</span></a>
+      </div>
+      <div class="col-lg-7">
+        <div class="faq-item">
+          <div class="faq-question">What minimum order quantity do you accept?<span class="faq-icon">+</span></div>
+          <div class="faq-answer"><div class="faq-answer-inner">We accept MOQs starting from 10 units for battery packs and 50 units for BMS modules. For prototyping and R&D, we accept single-unit orders. Contact our sales team for custom requirements.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you offer custom battery pack design?<span class="faq-icon">+</span></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes, our engineering team specializes in custom battery pack design. We handle everything from cell selection and pack architecture to BMS firmware and mechanical enclosure design. Typical lead time for custom development is 8–12 weeks.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What warranty do you offer on battery packs?<span class="faq-icon">+</span></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Our standard battery packs come with a 2-year or 1000-cycle warranty (whichever is first). Premium packs qualify for extended 3-year warranty programs. Our BMS includes lifetime firmware update support.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Are your products FAME II eligible?<span class="faq-icon">+</span></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes, our battery packs and EV components meet all FAME II and PLI scheme requirements. We provide complete documentation for subsidy claims and have helped over 50 OEM partners with their FAME II applications.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you provide installation and after-sales support?<span class="faq-icon">+</span></div>
+          <div class="faq-answer"><div class="faq-answer-inner">Absolutely. We offer on-site installation assistance, integration support, and 24/7 technical helpdesk. Our service network covers 18 states across India with authorized service partners.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- NEWSLETTER -->
+<section class="py-section bg-dark-surface">
+  <div class="container">
+    <div class="newsletter-section">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="section-tag">Stay Updated</div>
+          <h2 class="section-title" style="font-size:2rem;">Get EV Tech Insights <span class="gradient-text">Weekly</span></h2>
+          <p class="section-subtitle" style="font-size:0.9rem;">Join 5,000+ EV engineers and industry leaders. No spam — just cutting-edge battery tech, industry news, and product updates.</p>
+        </div>
+        <div class="col-lg-6">
+          <form class="newsletter-form">
+            <div class="newsletter-input-group">
+              <input class="newsletter-input" type="email" placeholder="your.email@company.com" required/>
+              <button type="submit" class="btn btn-volt"><span>Subscribe</span></button>
+            </div>
+          </form>
+          <p style="font-size:0.78rem;color:var(--text3);margin-top:0.8rem;">🔒 Zero spam. Unsubscribe anytime. We respect your privacy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-section">
+  <div class="container text-center">
+    <div class="section-tag" style="justify-content:center;">Start Your EV Journey</div>
+    <h2 class="section-title mb-3">Ready to <span class="gradient-text">Electrify</span> Your Product?</h2>
+    <p class="section-subtitle mx-auto mb-4" style="font-size:1rem;">Our engineering team is ready to help you design the perfect EV power solution. From concept to production in as fast as 8 weeks.</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="contact.html" class="btn btn-volt"><span>⚡ Get a Free Consultation</span></a>
+      <a href="battery-solutions.html" class="btn-outline-volt">View Product Catalog →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand"><span class="brand-volt">Volt</span><span class="brand-edge">Edge</span> <span style="color:var(--text3);font-size:0.8rem;font-weight:400;">EV Components</span></div>
+        <p class="footer-desc">India's trusted manufacturer of high-performance EV batteries, chargers, BMS, and components. Powering the electric future since 2013.</p>
+        <div style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text3);">
+          <div>📍 Plot 47, Phase II, GIDC Gandhinagar, Gujarat 382024</div>
+          <div style="margin-top:0.4rem;">📞 +91-79-2321-4567 | ✉ info@voltedgeev.in</div>
+        </div>
+        <div class="social-links">
+          <a class="social-btn" href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a class="social-btn" href="#" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a class="social-btn" href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+          <a class="social-btn" href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <div class="footer-heading">Products</div>
+        <a class="footer-link" href="battery-solutions.html">Li-Ion Battery Packs</a>
+        <a class="footer-link" href="battery-solutions.html">Battery Management Systems</a>
+        <a class="footer-link" href="components.html">EV Chargers</a>
+        <a class="footer-link" href="components.html">Motor Controllers</a>
+        <a class="footer-link" href="sustainability.html">Energy Storage</a>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <div class="footer-heading">Company</div>
+        <a class="footer-link" href="about.html">About Us</a>
+        <a class="footer-link" href="research.html">R&D</a>
+        <a class="footer-link" href="industries.html">Industries</a>
+        <a class="footer-link" href="sustainability.html">Sustainability</a>
+        <a class="footer-link" href="careers.html">Careers</a>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <div class="footer-heading">Resources</div>
+        <a class="footer-link" href="blog.html">Blog & Insights</a>
+        <a class="footer-link" href="#">Product Datasheets</a>
+        <a class="footer-link" href="#">Technical Support</a>
+        <a class="footer-link" href="#">Warranty Policy</a>
+        <a class="footer-link" href="#">Distributor Portal</a>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <div class="footer-heading">Legal</div>
+        <a class="footer-link" href="#">Privacy Policy</a>
+        <a class="footer-link" href="#">Terms of Use</a>
+        <a class="footer-link" href="#">Cookie Policy</a>
+        <a class="footer-link" href="#">Sitemap</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-text">© 2025 VoltEdge EV Components Pvt. Ltd. All rights reserved. CIN: U31200GJ2013PTC073456</div>
+      <div class="footer-bottom-text">Made in India 🇮🇳 | GST: 24AABCV1234R1Z5</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/917923214567" class="wa-float" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<!-- Back to Top -->
+<button id="back-to-top" title="Back to Top"><i class="fas fa-chevron-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

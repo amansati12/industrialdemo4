@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog & Insights | VoltEdge EV Components</title>
+  <meta name="description" content="EV battery technology insights, industry news, and innovation articles from VoltEdge's expert engineering team."/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .article-hero-img { height: 300px; display:flex; align-items:center; justify-content:center; font-size:8rem; background:linear-gradient(135deg,var(--dark3),var(--dark4)); border-radius:var(--radius-lg); overflow:hidden; position:relative; }
+    .article-hero-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, transparent 40%, var(--dark) 100%); }
+    .article-body { color:var(--text2); font-size:0.95rem; line-height:1.9; }
+    .article-body h3 { font-family:var(--font-display); color:var(--text); font-size:1.4rem; font-weight:700; margin:2rem 0 1rem; }
+    .article-body p { margin-bottom:1.2rem; }
+    .article-tag-pill { display:inline-block; background:rgba(0,255,136,0.1); border:1px solid var(--border2); color:var(--secondary); font-family:var(--font-mono); font-size:0.72rem; padding:0.25rem 0.7rem; border-radius:4px; margin:0 0.3rem 0.3rem 0; }
+    .blog-filter-btn { background:var(--surface2); border:1px solid var(--border); color:var(--text2); border-radius:50px; padding:0.4rem 1.2rem; font-family:var(--font-display); font-size:0.82rem; font-weight:600; cursor:pointer; transition:var(--transition); }
+    .blog-filter-btn:hover, .blog-filter-btn.active { background:rgba(0,212,255,0.1); border-color:var(--primary); color:var(--primary); }
+    .article-modal { display:none; position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,0.9); backdrop-filter:blur(10px); overflow-y:auto; }
+    .article-modal.open { display:block; }
+    .article-modal-inner { max-width:800px; margin:4rem auto; background:var(--dark2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:3rem; position:relative; }
+    .modal-close { position:absolute; top:1.5rem; right:1.5rem; background:var(--surface2); border:1px solid var(--border); border-radius:8px; width:40px; height:40px; display:flex;align-items:center;justify-content:center; cursor:pointer; color:var(--text2); font-size:1.2rem; transition:var(--transition); }
+    .modal-close:hover { color:var(--primary); border-color:var(--primary); }
+    @media(max-width:576px) { .article-modal-inner { margin:1rem; padding:1.5rem; } }
+  </style>
+</head>
+<body>
+<div id="loader"><div class="loader-logo">⚡ VOLTEDGE</div><div class="loader-bar"><div class="loader-bar-inner"></div></div></div>
+<div id="cursor"></div><div id="cursor-ring"></div>
+<div id="nav-overlay"></div>
+
+<nav id="navbar" class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><div class="brand-icon">⚡</div><span><span class="brand-volt">Volt</span><span class="brand-edge">Edge</span></span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false">
+      <span class="toggler-line"></span><span class="toggler-line"></span><span class="toggler-line"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="battery-solutions.html">Batteries</a></li>
+        <li class="nav-item"><a class="nav-link" href="components.html">Components</a></li>
+        <li class="nav-item"><a class="nav-link" href="research.html">R&amp;D</a></li>
+        <li class="nav-item"><a class="nav-link" href="industries.html">Industries</a></li>
+        <li class="nav-item"><a class="nav-link" href="sustainability.html">Sustainability</a></li>
+        <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta"><a href="contact.html" class="btn btn-volt"><span>Get Quote</span></a></div>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <div class="breadcrumb-volt mb-3"><a href="index.html">Home</a><span class="sep">/</span><span>Blog & Insights</span></div>
+    <div class="section-tag">Knowledge Hub</div>
+    <h1 class="page-hero-title">EV Tech Insights From<br/><span class="gradient-text">Our Engineers</span></h1>
+    <p class="section-subtitle">Deep dives into battery technology, EV industry trends, manufacturing innovation, and sustainability — written by our expert team.</p>
+  </div>
+</section>
+
+<section class="py-section">
+  <div class="container">
+    <!-- Filters -->
+    <div class="d-flex gap-2 flex-wrap mb-5">
+      <button class="blog-filter-btn active">All Topics</button>
+      <button class="blog-filter-btn">Battery Tech</button>
+      <button class="blog-filter-btn">Innovation</button>
+      <button class="blog-filter-btn">AI & Manufacturing</button>
+      <button class="blog-filter-btn">Sustainability</button>
+      <button class="blog-filter-btn">Industry News</button>
+    </div>
+
+    <!-- Featured Article -->
+    <div class="glass-card mb-5 reveal" style="overflow:hidden;">
+      <div class="row g-0">
+        <div class="col-md-5">
+          <div style="height:100%;min-height:280px;background:linear-gradient(135deg,var(--dark3),var(--dark4));display:flex;align-items:center;justify-content:center;font-size:8rem;">🔋</div>
+        </div>
+        <div class="col-md-7 p-4 p-lg-5">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="article-tag-pill">Battery Tech</span>
+            <span class="article-tag-pill">Featured</span>
+          </div>
+          <div class="blog-date mb-2" style="font-size:0.82rem;color:var(--text3);">May 2, 2025 · 8 min read</div>
+          <h2 style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;margin-bottom:1rem;line-height:1.3;">The Future of EV Batteries in India: A 2030 Technology Roadmap</h2>
+          <p style="color:var(--text2);font-size:0.92rem;line-height:1.7;margin-bottom:1.5rem;">India's EV battery market is projected to reach ₹1.2 lakh crore by 2030. Solid-state, sodium-ion, and advanced lithium chemistries will reshape the landscape. Here's what EV engineers and OEMs need to prepare for right now.</p>
+          <div class="blog-author">
+            <div class="author-mini-avatar">AK</div>
+            <div>
+              <div class="author-mini-name" style="color:var(--text);">Dr. Arvind Kumar</div>
+              <div style="font-size:0.75rem;color:var(--text3);">Chief Technology Officer, VoltEdge</div>
+            </div>
+          </div>
+          <button class="btn btn-volt mt-4" onclick="openArticle('article1')"><span>Read Full Article →</span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="row g-4">
+      <!-- Article 2 -->
+      <div class="col-md-6">
+        <div class="blog-card reveal h-100">
+          <div class="blog-img" style="font-size:5rem;">🔬</div>
+          <div class="p-4">
+            <div class="blog-meta"><span class="blog-tag">Innovation</span><span class="blog-date">Apr 18, 2025</span></div>
+            <div class="blog-title">Lithium-Ion vs Solid-State Batteries: What EV Manufacturers Need to Know in 2025</div>
+            <div class="blog-excerpt">Solid-state batteries promise 2× energy density and elimination of liquid electrolyte fires — but are they production-ready for Indian OEMs? A rigorous technical comparison with real data.</div>
+            <div class="blog-author">
+              <div class="author-mini-avatar">SP</div>
+              <div>
+                <div class="author-mini-name">Sneha Patel · Senior Research Engineer</div>
+                <div style="font-size:0.72rem;color:var(--text3);">12 min read</div>
+              </div>
+            </div>
+            <button class="btn-outline-volt d-block mt-3" style="font-size:0.82rem;padding:0.5rem 1.2rem;width:100%;text-align:center;" onclick="openArticle('article2')">Read Article →</button>
+          </div>
+        </div>
+      </div>
+      <!-- Article 3 -->
+      <div class="col-md-6">
+        <div class="blog-card reveal h-100">
+          <div class="blog-img" style="font-size:5rem;">⚡</div>
+          <div class="p-4">
+            <div class="blog-meta"><span class="blog-tag">Industry News</span><span class="blog-date">Apr 10, 2025</span></div>
+            <div class="blog-title">The Rise of EV Charging Infrastructure in India: Progress, Gaps & Opportunities</div>
+            <div class="blog-excerpt">With 12,000 public chargers installed and a target of 400,000 by 2030, India's charging network is growing fast — but challenges remain in rural areas, apartment charging, and interoperability.</div>
+            <div class="blog-author">
+              <div class="author-mini-avatar">RV</div>
+              <div>
+                <div class="author-mini-name">Rohit Verma · Product Manager</div>
+                <div style="font-size:0.72rem;color:var(--text3);">9 min read</div>
+              </div>
+            </div>
+            <button class="btn-outline-volt d-block mt-3" style="font-size:0.82rem;padding:0.5rem 1.2rem;width:100%;text-align:center;" onclick="openArticle('article3')">Read Article →</button>
+          </div>
+        </div>
+      </div>
+      <!-- Article 4 -->
+      <div class="col-md-6">
+        <div class="blog-card reveal h-100">
+          <div class="blog-img" style="font-size:5rem;">🤖</div>
+          <div class="p-4">
+            <div class="blog-meta"><span class="blog-tag">AI & Manufacturing</span><span class="blog-date">Apr 5, 2025</span></div>
+            <div class="blog-title">How AI is Transforming EV Battery Manufacturing: From Cell Formation to Quality Control</div>
+            <div class="blog-excerpt">Machine learning is revolutionizing battery production — from adaptive formation cycling that extends cycle life by 35% to computer vision QC catching micro-cracks invisible to human inspectors.</div>
+            <div class="blog-author">
+              <div class="author-mini-avatar">MP</div>
+              <div>
+                <div class="author-mini-name">Manav Pillai · AI Systems Lead</div>
+                <div style="font-size:0.72rem;color:var(--text3);">10 min read</div>
+              </div>
+            </div>
+            <button class="btn-outline-volt d-block mt-3" style="font-size:0.82rem;padding:0.5rem 1.2rem;width:100%;text-align:center;" onclick="openArticle('article4')">Read Article →</button>
+          </div>
+        </div>
+      </div>
+      <!-- Article 5 -->
+      <div class="col-md-6">
+        <div class="blog-card reveal h-100">
+          <div class="blog-img" style="font-size:5rem;">♻️</div>
+          <div class="p-4">
+            <div class="blog-meta"><span class="blog-tag">Sustainability</span><span class="blog-date">Mar 22, 2025</span></div>
+            <div class="blog-title">Sustainable Battery Recycling in India: Challenges, Technologies & the Path Forward</div>
+            <div class="blog-excerpt">As India's EV fleet grows to millions of vehicles, end-of-life battery management becomes critical. We explore hydrometallurgical, pyrometallurgical, and direct recycling approaches and their commercial viability.</div>
+            <div class="blog-author">
+              <div class="author-mini-avatar">NS</div>
+              <div>
+                <div class="author-mini-name">Nisha Sharma · Sustainability Head</div>
+                <div style="font-size:0.72rem;color:var(--text3);">11 min read</div>
+              </div>
+            </div>
+            <button class="btn-outline-volt d-block mt-3" style="font-size:0.82rem;padding:0.5rem 1.2rem;width:100%;text-align:center;" onclick="openArticle('article5')">Read Article →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter-section mt-5 reveal">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="section-tag">Stay Updated</div>
+          <h3 style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;">Get Our Weekly <span class="gradient-text">EV Tech Digest</span></h3>
+          <p style="color:var(--text2);font-size:0.9rem;margin-top:0.5rem;">Join 5,000+ EV engineers. One email, every Friday. No spam.</p>
+        </div>
+        <div class="col-lg-6">
+          <form class="newsletter-form">
+            <div class="newsletter-input-group">
+              <input class="newsletter-input" type="email" placeholder="your@email.com" required/>
+              <button type="submit" class="btn btn-volt"><span>Subscribe</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Article Modals -->
+<div class="article-modal" id="article1">
+  <div class="article-modal-inner">
+    <button class="modal-close" onclick="closeArticle('article1')">✕</button>
+    <div class="d-flex gap-2 mb-3"><span class="article-tag-pill">Battery Tech</span><span class="article-tag-pill">Featured</span></div>
+    <div style="font-size:0.82rem;color:var(--text3);margin-bottom:1rem;">May 2, 2025 · Dr. Arvind Kumar · 8 min read</div>
+    <h1 style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;margin-bottom:1.5rem;line-height:1.2;">The Future of EV Batteries in India: A 2030 Technology Roadmap</h1>
+    <div class="article-hero-img mb-4" style="height:200px;font-size:5rem;"><span style="position:relative;z-index:1;">🔋</span></div>
+    <div class="article-body">
+      <p>India's electric vehicle revolution is accelerating at an unprecedented pace. With over 1.5 million EVs sold in FY 2024-25 and government targets of 30% EV penetration by 2030, the battery technology that powers these vehicles will determine whether India leads or follows in the global EV race.</p>
+      <h3>Where We Are Today</h3>
+      <p>The current Indian EV battery market is dominated by Lithium Iron Phosphate (LFP) and Nickel Manganese Cobalt (NMC) chemistry cells, primarily imported from China and Korea. Domestic cell manufacturing is still nascent — PLI scheme recipients like Rajesh Exports, Ola Electric, and Reliance are yet to reach meaningful production volumes.</p>
+      <p>Battery packs for two-wheelers typically range from 2–4 kWh at 60–72V, while four-wheelers span 25–80 kWh at 400–800V. Energy density has improved from 130 Wh/kg in 2018 to over 220 Wh/kg today in premium NMC packs.</p>
+      <h3>The Technologies That Will Define 2030</h3>
+      <p><strong style="color:var(--primary);">Solid-State Batteries:</strong> Toyota, Samsung SDI, and QuantumScape are targeting 2027–2028 commercial production. Indian OEMs should prepare for integration by 2029-30. Energy density could exceed 400 Wh/kg, eliminating thermal runaway risk entirely.</p>
+      <p><strong style="color:var(--secondary);">Sodium-Ion Batteries:</strong> CATL's first-gen Na-ion cells are already in Chinese EVs. For India's price-sensitive two and three-wheeler market, sodium-ion offers cost parity with lead-acid at 130 Wh/kg — revolutionary for e-rickshaw economics.</p>
+      <p><strong style="color:var(--accent);">Silicon Anode NMC:</strong> 10–15% higher energy density than graphite anode cells at marginal cost premium. Expect widespread adoption in 4W passenger EVs by 2026-27.</p>
+      <h3>Our Recommendation for Indian OEMs</h3>
+      <p>Invest in flexible battery management systems that can accommodate multiple cell chemistries. Build supplier relationships with both LFP and NMC vendors. Begin solid-state battery integration roadmaps now — the transition will be rapid once mass production begins.</p>
+      <p>The Indian EV battery market of 2030 will look dramatically different from today. Companies that prepare now will lead. Those that don't will be left importing technology yet again.</p>
+    </div>
+    <div class="mt-4 pt-4" style="border-top:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div class="author-mini-avatar" style="width:50px;height:50px;font-size:1.1rem;">AK</div>
+        <div><div style="font-family:var(--font-display);font-weight:700;">Dr. Arvind Kumar</div><div style="font-size:0.82rem;color:var(--text3);">Chief Technology Officer, VoltEdge EV Components · PhD Power Electronics, IIT Bombay</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-modal" id="article2">
+  <div class="article-modal-inner">
+    <button class="modal-close" onclick="closeArticle('article2')">✕</button>
+    <div class="d-flex gap-2 mb-3"><span class="article-tag-pill">Innovation</span></div>
+    <div style="font-size:0.82rem;color:var(--text3);margin-bottom:1rem;">Apr 18, 2025 · Sneha Patel · 12 min read</div>
+    <h1 style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;margin-bottom:1.5rem;line-height:1.2;">Lithium-Ion vs Solid-State Batteries: What EV Manufacturers Need to Know in 2025</h1>
+    <div class="article-hero-img mb-4" style="height:200px;font-size:5rem;"><span style="position:relative;z-index:1;">🔬</span></div>
+    <div class="article-body">
+      <p>The battery technology landscape is at an inflection point. After decades of incremental improvement in conventional lithium-ion technology, solid-state batteries are finally approaching commercial viability. But for Indian EV manufacturers planning their 2026–2028 product roadmaps, the critical question is: when exactly should they make the switch?</p>
+      <h3>The Fundamental Difference</h3>
+      <p>Conventional lithium-ion batteries use a liquid electrolyte — typically a lithium salt dissolved in organic solvents — to shuttle lithium ions between electrodes during charge and discharge. Solid-state batteries replace this with a solid electrolyte, either oxide-based (LLZO), sulfide-based, or polymer-based.</p>
+      <p>This seemingly simple change has profound implications for performance, safety, and manufacturing complexity.</p>
+      <h3>Performance Comparison</h3>
+      <p><strong style="color:var(--primary);">Energy Density:</strong> Best-in-class NMC lithium-ion packs achieve 220–250 Wh/kg. First-generation solid-state cells are targeting 350–400 Wh/kg at the cell level — a 50–80% improvement that translates to dramatically longer range or lighter vehicles.</p>
+      <p><strong style="color:var(--secondary);">Safety:</strong> Liquid electrolytes are flammable. Thermal runaway — the catastrophic failure mode behind EV fire incidents — is driven by liquid electrolyte combustion. Solid electrolytes are inherently non-flammable, potentially eliminating this failure mode entirely.</p>
+      <p><strong style="color:var(--accent);">Fast Charging:</strong> Solid-state cells have shown compatibility with 10-minute charging to 80% SOC in lab conditions. However, achieving this at scale without lithium dendrite formation remains a key engineering challenge.</p>
+      <h3>The Manufacturing Challenge</h3>
+      <p>Conventional lithium-ion manufacturing is well-understood and highly automated. Solid-state manufacturing requires extreme precision — thin solid electrolyte layers must be defect-free, and assembly often requires dry room or argon atmosphere environments far more stringent than current battery plants.</p>
+      <p>Our analysis suggests solid-state cells will cost 2–3× more than equivalent lithium-ion through 2027, declining to 1.2–1.5× by 2030 as manufacturing scales.</p>
+      <h3>Our Verdict for Indian OEMs</h3>
+      <p>Stick with optimized NMC/LFP for production vehicles through 2027. Begin solid-state integration R&D programs now. Plan product line transitions for 2028–2030. The technology will be ready before most OEM product cycles can accommodate it.</p>
+    </div>
+    <div class="mt-4 pt-4" style="border-top:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div class="author-mini-avatar">SP</div>
+        <div><div style="font-family:var(--font-display);font-weight:700;">Sneha Patel</div><div style="font-size:0.82rem;color:var(--text3);">Senior Research Engineer, VoltEdge EV Components</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-modal" id="article3">
+  <div class="article-modal-inner">
+    <button class="modal-close" onclick="closeArticle('article3')">✕</button>
+    <div class="d-flex gap-2 mb-3"><span class="article-tag-pill">Industry News</span></div>
+    <div style="font-size:0.82rem;color:var(--text3);margin-bottom:1rem;">Apr 10, 2025 · Rohit Verma · 9 min read</div>
+    <h1 style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;margin-bottom:1.5rem;line-height:1.2;">The Rise of EV Charging Infrastructure in India: Progress, Gaps & Opportunities</h1>
+    <div class="article-hero-img mb-4" style="height:200px;font-size:5rem;"><span style="position:relative;z-index:1;">⚡</span></div>
+    <div class="article-body">
+      <p>India had approximately 12,000 public EV charging stations operational as of March 2025, compared to just 1,800 in 2022. This 6× growth in three years sounds impressive — until you realize China installed more chargers in a single month last year. The gap is enormous, but so is the opportunity.</p>
+      <h3>Current State of India's Charging Network</h3>
+      <p>The existing network is heavily concentrated in top-10 cities — Delhi-NCR, Mumbai, Bengaluru, Pune, Chennai, Hyderabad, and Ahmedabad account for over 70% of installations. Highway corridors on NH-48 (Delhi-Mumbai), NH-44 (Delhi-Chennai), and NH-8 have seen significant private investment driven by FAME II subsidies.</p>
+      <p>AC charging (Type 2, 22 kW) dominates for two and three-wheelers. DC fast charging (CCS2, 50–120 kW) is growing for four-wheelers but remains expensive for operators at ₹8–12 lakh per installation.</p>
+      <h3>Critical Gaps</h3>
+      <p><strong style="color:var(--primary);">Rural Connectivity:</strong> Over 60% of India's EV fleet operates in Tier 2–4 cities and rural areas that have almost zero public charging infrastructure. Intercity travel for four-wheelers remains range-anxiety-inducing.</p>
+      <p><strong style="color:var(--secondary);">Apartment Charging:</strong> 65% of urban Indians live in apartments. Without mandatory EV charging provisions in building codes, last-mile home charging remains inaccessible to most urban EV owners.</p>
+      <p><strong style="color:var(--accent);">Interoperability:</strong> Multiple incompatible apps, payment systems, and charging protocols create friction. A unified national charging network app — similar to what OCPI enables in Europe — is urgently needed.</p>
+      <h3>The Opportunity</h3>
+      <p>NITI Aayog's target of 400,000 public chargers by 2030 requires installing 65,000 chargers per year — 5× current annual installation rates. This represents a massive market opportunity for charger manufacturers, operators, and component suppliers.</p>
+      <p>VoltEdge's DC fast charger platform supports OCPP 2.0.1, enabling plug-and-play integration with any charging network software — exactly the kind of open-standard infrastructure India's network needs.</p>
+    </div>
+    <div class="mt-4 pt-4" style="border-top:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div class="author-mini-avatar">RV</div>
+        <div><div style="font-family:var(--font-display);font-weight:700;">Rohit Verma</div><div style="font-size:0.82rem;color:var(--text3);">Product Manager — Charging Solutions, VoltEdge</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-modal" id="article4">
+  <div class="article-modal-inner">
+    <button class="modal-close" onclick="closeArticle('article4')">✕</button>
+    <div class="d-flex gap-2 mb-3"><span class="article-tag-pill">AI & Manufacturing</span></div>
+    <div style="font-size:0.82rem;color:var(--text3);margin-bottom:1rem;">Apr 5, 2025 · Manav Pillai · 10 min read</div>
+    <h1 style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;margin-bottom:1.5rem;line-height:1.2;">How AI is Transforming EV Battery Manufacturing: From Cell Formation to Quality Control</h1>
+    <div class="article-hero-img mb-4" style="height:200px;font-size:5rem;"><span style="position:relative;z-index:1;">🤖</span></div>
+    <div class="article-body">
+      <p>Battery manufacturing is fundamentally a data problem. A single 50 kWh battery pack contains 2,000–4,000 individual cells, each generating hundreds of data points during formation cycling. AI is the only tool capable of extracting actionable intelligence from this data — and the early movers are seeing dramatic improvements in yield, quality, and performance.</p>
+      <h3>AI-Optimized Formation Protocols</h3>
+      <p>The formation step — the initial charge-discharge cycles that activate a new cell — is critical for establishing long-term performance. Traditional fixed CC-CV protocols treat every cell identically. Our AI system analyzes each cell's electrochemical response in real-time and adjusts current profiles to optimize SEI (Solid Electrolyte Interface) formation.</p>
+      <p>The results are striking: cells formed with our AI protocol show 15–20% better capacity retention after 1000 cycles compared to industry-standard protocols. This translates directly to longer EV range over the vehicle's lifetime.</p>
+      <h3>Computer Vision Quality Control</h3>
+      <p>Traditional optical inspection misses defects smaller than 100 micrometers — yet electrode coating non-uniformities at that scale can cause premature cell failure. Our deep learning vision system, trained on 2 million annotated cell images, detects coating voids, particle agglomerations, and separator wrinkles with 99.7% accuracy at production line speeds.</p>
+      <p>Since deploying this system in 2024, our cell-level yield has improved from 94.2% to 98.8% — a 4.6 percentage point improvement that saves approximately ₹3.2 Cr in materials annually.</p>
+      <h3>Predictive Battery Health Monitoring</h3>
+      <p>Our VoltGuard III BMS deploys a neural network directly on the embedded MCU — no cloud connectivity required. Trained on 50,000 battery aging cycles across multiple chemistries, it predicts remaining useful life (RUL) with ±3% accuracy and detects early-stage lithium plating — a precursor to thermal runaway — 72 hours before conventional voltage monitoring would detect a problem.</p>
+      <h3>What's Next</h3>
+      <p>Digital twin integration is the next frontier. By simulating complete battery pack performance in software before physical production, we expect to reduce development cycles from 18 months to 8 months while improving first-time-right rates by 40%.</p>
+    </div>
+    <div class="mt-4 pt-4" style="border-top:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div class="author-mini-avatar">MP</div>
+        <div><div style="font-family:var(--font-display);font-weight:700;">Manav Pillai</div><div style="font-size:0.82rem;color:var(--text3);">AI Systems Lead, VoltEdge R&D Division</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-modal" id="article5">
+  <div class="article-modal-inner">
+    <button class="modal-close" onclick="closeArticle('article5')">✕</button>
+    <div class="d-flex gap-2 mb-3"><span class="article-tag-pill">Sustainability</span></div>
+    <div style="font-size:0.82rem;color:var(--text3);margin-bottom:1rem;">Mar 22, 2025 · Nisha Sharma · 11 min read</div>
+    <h1 style="font-family:var(--font-display);font-size:1.8rem;font-weight:700;margin-bottom:1.5rem;line-height:1.2;">Sustainable Battery Recycling in India: Challenges, Technologies & the Path Forward</h1>
+    <div class="article-hero-img mb-4" style="height:200px;font-size:5rem;"><span style="position:relative;z-index:1;">♻️</span></div>
+    <div class="article-body">
+      <p>India's EV fleet will generate an estimated 2.5 lakh metric tonnes of end-of-life lithium-ion battery waste by 2030. Without robust recycling infrastructure, this represents both a severe environmental liability and a critical materials security risk — lithium, cobalt, and nickel are strategic minerals with limited domestic supply.</p>
+      <h3>The Three Recycling Pathways</h3>
+      <p><strong style="color:var(--primary);">Pyrometallurgy (Smelting):</strong> High-temperature smelting recovers cobalt, nickel, and copper at 90%+ efficiency but cannot recover lithium economically, consumes enormous energy, and generates toxic slag. It's commercially proven but environmentally costly.</p>
+      <p><strong style="color:var(--secondary);">Hydrometallurgy (Chemical leaching):</strong> Uses acid leaching and solvent extraction to recover 95%+ of all valuable metals including lithium. Lower energy consumption and better material quality output. This is VoltEdge's preferred approach and the global industry trend.</p>
+      <p><strong style="color:var(--accent);">Direct Recycling:</strong> The holy grail — recovering cathode materials directly without decomposing them, preserving their structure for reuse. Promises the highest value recovery but is still largely pre-commercial. Startups like Ascend Elements and Li-Cycle are advancing this in the US.</p>
+      <h3>India's Regulatory Framework</h3>
+      <p>The Battery Waste Management Rules 2022 (BWMR) mandate that battery producers achieve 70% collection and recycling efficiency by 2025, rising to 100% by 2028. Extended Producer Responsibility (EPR) certificates now have a market price, creating financial incentives for recycling investment.</p>
+      <p>However, enforcement remains inconsistent. An estimated 60% of end-of-life batteries are currently handled by informal sector dismantlers operating outside CPCB authorization — creating both safety risks and data gaps.</p>
+      <h3>The Second-Life Opportunity</h3>
+      <p>Before recycling, battery packs that retain 70–80% of original capacity can be repurposed for stationary energy storage — extending their economic value by 8–12 years. Our proprietary rapid health assessment algorithm grades retired EV packs for second-life suitability in under 4 hours. We estimate ₹15,000–25,000 per kWh residual value for qualifying packs.</p>
+      <p>The path forward requires industry collaboration, regulatory clarity, and investment in collection networks. VoltEdge's take-back program currently processes 500+ packs per year — a model we hope will scale across India's battery industry.</p>
+    </div>
+    <div class="mt-4 pt-4" style="border-top:1px solid var(--border);">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div class="author-mini-avatar">NS</div>
+        <div><div style="font-family:var(--font-display);font-weight:700;">Nisha Sharma</div><div style="font-size:0.82rem;color:var(--text3);">Head of Sustainability, VoltEdge EV Components</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4"><div class="footer-brand"><span class="brand-volt">Volt</span><span class="brand-edge">Edge</span></div><p class="footer-desc">Deep EV tech insights from India's battery engineering experts.</p><div class="social-links"><a class="social-btn" href="#"><i class="fab fa-linkedin-in"></i></a><a class="social-btn" href="#"><i class="fab fa-x-twitter"></i></a><a class="social-btn" href="#"><i class="fab fa-youtube"></i></a></div></div>
+      <div class="col-sm-6 col-lg-2"><div class="footer-heading">Products</div><a class="footer-link" href="battery-solutions.html">Battery Packs</a><a class="footer-link" href="components.html">Components</a></div>
+      <div class="col-sm-6 col-lg-2"><div class="footer-heading">Company</div><a class="footer-link" href="about.html">About</a><a class="footer-link" href="careers.html">Careers</a><a class="footer-link" href="contact.html">Contact</a></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-bottom-text">© 2025 VoltEdge EV Components Pvt. Ltd.</div><div class="footer-bottom-text">Made in India 🇮🇳</div></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/917923214567" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+<button id="back-to-top"><i class="fas fa-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+function openArticle(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeArticle(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.article-modal').forEach(modal => {
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) { modal.classList.remove('open'); document.body.style.overflow = ''; }
+  });
+});
+document.querySelectorAll('.blog-filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
